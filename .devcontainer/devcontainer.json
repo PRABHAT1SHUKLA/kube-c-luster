@@ -1,0 +1,9 @@
+{
+  "name": "Kubernetes Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+  },
+  "postCreateCommand": "sudo chown -R codespace:codespace /usr/local/share/kubeconfig && mkdir -p $HOME/.kube && ln -s /usr/local/share/kubeconfig/k3d-k3s-default.yaml $HOME/.kube/config"
+}
